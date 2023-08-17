@@ -1,27 +1,24 @@
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
 export default {
-    "db": {
-        "user": null,
-        "pass": null,
-        "host": "localhost",
-        "port": "27017",
-        "database": "testdb",
-        "authSource": null
+    'db': {
+        mongoCnnString: process.env.MONGODB_CONNECTION_STRING,
     },
-    "host": {
-        "url": "<server-url>",
-        "port": "3000"
+    'host': {
+        'url': process.env.HOST_URL,
+        'port': process.env.HOST_PORT,
     },
-    "jwt": {
-        "secretOrKey": "secret",
-        "expiresIn": 36000000
+    'jwt': {
+        'secretOrKey': process.env.ACCESS_TOKEN_SECRET,
+        'expiresIn': 36000000,
     },
-    "mail":{
-        "host": "<smtp-host>",
-        "port": "<port>",
-        "secure": false,
-        "user": "<username>",
-        "pass": "<password>"
+    'mail':{
+        'host': process.env.MAIL_HOST,
+        'port': process.env.MAIL_PORT,
+        'secure': true,
+        'user': process.env.MAIL_USER,
+        'pass': process.env.MAIL_PASS,
     }
-  }
-  
-  
+}

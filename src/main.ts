@@ -6,6 +6,7 @@ import * as express from 'express';
 import { AllExceptionsFilter } from './common/filters/all-exception.filter';
 import * as helmet from 'helmet';
 import * as rateLimit from 'express-rate-limit';
+import config from './config';
 
 
 
@@ -36,6 +37,6 @@ async function bootstrap() {
   app.use("/auth/email/register", createAccountLimiter);
   /******/
 
-  await app.listen(3000);
+  await app.listen(config.host.port);
 }
 bootstrap();
