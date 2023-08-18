@@ -37,6 +37,6 @@ async function bootstrap() {
   app.use("/auth/email/register", createAccountLimiter);
   /******/
 
-  await app.listen(config.host.port);
+  await app.listen(config.port);
 }
 bootstrap();

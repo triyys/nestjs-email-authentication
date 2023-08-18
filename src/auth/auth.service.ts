@@ -139,7 +139,7 @@ export class AuthService {
           subject: 'Verify Email', 
           text: 'Verify Email', 
           html: 'Hi! <br><br> Thanks for your registration<br><br>'+
-          '<a href='+ config.host.url + ':' + config.host.port +'/auth/email/verify/'+ model.emailToken + '>Click here to activate your account</a>'  // html body
+          '<a href='+ config.host +'/auth/email/verify/'+ model.emailToken + '>Click here to activate your account</a>'  // html body
         };
     
         var sent = await new Promise<boolean>(async function(resolve, reject) {
@@ -189,7 +189,7 @@ export class AuthService {
           subject: 'Frogotten Password', 
           text: 'Forgot Password',
           html: 'Hi! <br><br> If you requested to reset your password<br><br>'+
-          '<a href='+ config.host.url + ':' + config.host.port +'/auth/email/reset-password/'+ tokenModel.newPasswordToken + '>Click here</a>'  // html body
+          '<a href='+ config.host + '/auth/email/reset-password/' + tokenModel.newPasswordToken + '>Click here</a>'  // html body
         };
     
         var sent = await new Promise<boolean>(async function(resolve, reject) {

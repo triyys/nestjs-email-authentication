@@ -6,10 +6,8 @@ export default {
     'db': {
         mongoCnnString: process.env.MONGODB_CONNECTION_STRING,
     },
-    'host': {
-        'url': process.env.HOST_URL,
-        'port': process.env.HOST_PORT,
-    },
+    'host': process.env.HOST_URL,
+    'port': process.env.PORT,
     'jwt': {
         'secretOrKey': process.env.ACCESS_TOKEN_SECRET,
         'expiresIn': 36000000,
